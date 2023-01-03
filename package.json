@@ -56,6 +56,7 @@
     "asynckit": "^0.4.0",
     "autoprefixer": "^9.8.8",
     "axe-core": "^4.6.1",
+    "babel-loader": "^9.1.0",
     "babel-plugin-istanbul": "^6.1.1",
     "babel-plugin-jest-hoist": "^29.2.0",
     "babel-plugin-polyfill-corejs2": "^0.3.3",
