@@ -11,6 +11,11 @@ li {
   list-style: none;
 }
 
+header {
+  width: 85%;
+  margin: auto;
+}
+
 nav {
   padding: 1rem 3rem;
   display: flex;
@@ -21,7 +26,54 @@ nav {
 header ul {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
+}
+
+ul li {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+}
+
+ul li:hover {
+  background: #078e07;
+  color: #fff;
+  cursor: pointer;
+}
+
+.meals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 80%;
+}
+
+.meal {
+  width: 300px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.meal img {
+  height: 300px;
+  width: 250px;
+}
+
+.btn-cmt {
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: #078e07;
+  color: #fff;
 }
 
 footer {
