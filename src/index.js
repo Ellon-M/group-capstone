@@ -1,32 +1,71 @@
+import { constant } from 'lodash';
 import './style.css';
-const meals = document.querySelector('.meals');
+const mealsSec = document.querySelector('.meals');
+const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R8PkkxCkNQPQdCTMeNzH/likes/';
 
-// const result =  fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
-//   .then((res) => res.json())
-//   .then((data) => console.log(data));
+// display Meals
+const displayMeal = (data) => {
+  mealsSec.innerHTML +=
+  data.meals.map( meal =>`
+  <div class="meal">
+    <img src="${meal.strMealThumb}" alt="">
+    <h2>${meal.strMeal}</h2>
+    <div class="likes">
+      <button class="btn-like" id="${meal.idMeal}">Like</button>
+      <p class="likes-count" id="${meal.idMeal}"></>
+    </div>
+    <button class="btn-cmt" id="${meal.idMeal}">Comments</button>
+    
+  </div>`)
+}
 
-
-// .then((data) => console.log(data.meals[0].strMeal));
-
-// console.log(result)
-// const addNewUser = async (data) => {
-//   meals.innerHTML += `<div class ="meal"> ${data} </div>`;
-// };
-
-async function get() {
+// Fetch the mealdb Api 
+const  get = async () => {
   const respons = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian');
   const data = await respons.json();
- 
-  console.log(data.meals);
-  data.meals.map( meal => console.log(meal.strMeal));
-
-  meals.innerHTML +=
-      data.meals.map( meal =>`
-      <div class="meal">
-        <img src="${meal.strMealThumb}" alt="">
-        <h2>${meal.strMeal}</h2>
-        <button class="btn-cmt">Comments</button>
-      </div>`)
+  displayMeal(data);
 };
 
 get();
+
+document.addEventListener('click', (e) => {
+  if(e.target.className === 'btn-cmt'){
+    const mealId = e.target.id;
+  }
+})
+
+// likes
+document.addEventListener('click', async (e) => {
+  if(e.target.className === 'btn-like'){
+    // e.preventDefault();
+    const item = {
+      item_id: e.target.id,
+    };
+
+    const postRequest = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(item),
+    };
+  
+    await fetch(url, postRequest).then((res) => res.json());
+    window.location.reload();
+  }
+  
+});
+
+fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
+
+const displayLikes = (data) => {
+  //  data.forEach((resp) => {console.log(resp.item_id)} );
+  const likeCount = document.querySelectorAll('.likes-count');
+  likeCount.forEach(element => {
+    data.forEach((resp) => {
+      if(element.id === resp.item_id  ){
+        element.textContent = resp.likes + ' likes'
+      }
+    });
+  })
+}
