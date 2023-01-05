@@ -51,8 +51,8 @@ main {
 }
 
 .popup {
-  margin: 2rem 1rem;
-  padding: 3rem 0.5rem;
+  margin: 2rem;
+  padding: 4rem 0.5rem;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -66,7 +66,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  width: 80%;
+  width: 95%;
 }
 
 .meal-img {
@@ -82,6 +82,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem;
+  width: 95%;
 }
 
 .meal-name {
@@ -93,11 +95,117 @@ main {
 
 .instructions-heading {
   font-size: 22px;
-  margin-top: 4rem;
+  margin-top: 1rem;
 }
 
 .meal-instructions {
   font-size: 18px;
   padding: 0;
   margin: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  .popup {
+    margin: 4rem;
+    padding: 5rem 2rem;
+  }
+}
+
+@media only screen and (min-width: 1240px) {
+  .popup {
+    margin: 6rem;
+    padding: 6rem 4rem;
+  }
+
+  .meal-img {
+    height: 350px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .popup {
+    margin: 7rem;
+    padding: 7rem 5rem;
+  }
+
+  .meal-img {
+    height: 400px;
+  }
+
+  .meal-name {
+    font-size: 26px;
+  }
+
+  .meal-instructions {
+    font-size: 20px;
+  }
+}
+
+#comment-form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+}
+
+input[type=text] {
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #383838;
+  border-radius: 12px;
+  margin: 25px 0;
+}
+
+textarea {
+  width: 100%;
+  height: 140px;
+  border: 1px solid #383838;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+#comment-btn {
+  width: 100px;
+  height: 5vh;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  margin: 25px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 790px) {
+  #comment-form {
+    width: 95%;
+    align-items: center;
+  }
+
+  input[type=text] {
+    padding: 14px;
+    width: 600px;
+  }
+
+  textarea {
+    width: 600px;
+    height: 180px;
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  input[type=text] {
+    padding: 14px;
+    width: 700px;
+  }
+
+  textarea {
+    width: 700px;
+    height: 200px;
+  }
+
+  #comment-btn {
+    width: 120px;
+    height: 6vh;
+    font-size: 18px;
+  }
 }
