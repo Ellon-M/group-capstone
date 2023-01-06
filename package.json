@@ -24,13 +24,17 @@
   "scripts": {
     "test": "jest",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
   },
   "name": "group-capstone",
   "description": "<a name=\"readme-top\"></a>",
   "version": "1.0.0",
   "main": "babel.config.js",
   "private": true,
+  "repository": {
+    "url": "git+https://github.com/Ellon-M/group-capstone.git"
+  },
   "dependencies": {
     "abab": "^2.0.6",
     "abbrev": "^1.1.1",
@@ -232,6 +236,7 @@
     "get-stdin": "^8.0.0",
     "get-stream": "^5.2.0",
     "get-uri": "^3.0.2",
+    "gh-pages": "^4.0.0",
     "glob": "^8.0.3",
     "glob-parent": "^5.1.2",
     "glob-to-regexp": "^0.4.1",

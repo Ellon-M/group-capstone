@@ -17,7 +17,6 @@ export default class Popup {
     const commentsTitle = document.querySelector('.fetched-comments-heading');
     const message = document.querySelector('.no-comments-message');
     commentBtn.addEventListener('click', () => {
-      // console.log(name.value, comment.value);
       this.setComment(this.id, name.value, comment.value);
       if (message) {
         fetchedComments.removeChild(message);

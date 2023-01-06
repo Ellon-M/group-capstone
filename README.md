@@ -37,6 +37,7 @@
 
 
 <!-- **This** is a simple webpage that displays scores, submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external [Leaderboard API service](https://www.notion.so/microverse/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3) -->
+A web app that uses data from the [MealDB API](https://www.themealdb.com/api.php) to display various types of meals. Users can also like and comment on specific meals of choice thanks to the [Involvement API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270) by Microverse.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -48,7 +49,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
 
 - **Webpack - as a module bundler**
 - **Async JavaScript - API Calls**
@@ -76,9 +76,9 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-NodeJS installed.
-Git installed.
-A web browser of choice.
+-NodeJS installed.
+-Git installed.
+-A web browser of choice.
 
 ### Setup
 

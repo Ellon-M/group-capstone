@@ -1,6 +1,7 @@
 import counter from './Modules/counter.js';
 import './style.css';
-import Popup from './js/popup.js';
+import Popup from './Modules/popup.js';
+
 const mealsSec = document.querySelector('.meals');
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R8PkkxCkNQPQdCTMeNzH/likes/';
 
@@ -45,19 +46,10 @@ const postReqLikes = async (id) => {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({item_id: id,}),
+    body: JSON.stringify({ item_id: id }),
   };
   await fetch(url, postRequest).then((res) => res.json());
-}
-
-document.addEventListener('click', async (e) => {
-  e.preventDefault()
-  if(e.target.className === 'btn-like'){
-    const id = e.target.id;
-    postReqLikes(id);
-  }
-  await fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
-});
+};
 
 // display likes
 
@@ -72,16 +64,24 @@ const displayLikes = (data) => {
   });
 };
 
-window.addEventListener('load', () => {
-  fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
-})
+document.addEventListener('click', async (e) => {
+  e.preventDefault();
+  if (e.target.className === 'btn-like') {
+    const { id } = e.target;
+    postReqLikes(id);
+  }
+  await fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
+});
 
-document.addEventListener('click', (e) => {
+window.addEventListener('load', () => {
   fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
 });
 
-//Show the number of items in the page.
-  window.addEventListener('load', () => {
-    mealsSec.lastChild.innerHTML +=`<div>Pages 1 : ${counter()} Items.</div>`
-  })
-  
+document.addEventListener('click', () => {
+  fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
+});
+
+// Show the number of items in the page.
+window.addEventListener('load', () => {
+  mealsSec.lastChild.innerHTML += `<div>Pages 1 : ${counter()} Items.</div>`;
+});
