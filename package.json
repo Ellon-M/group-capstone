@@ -33,6 +33,7 @@
   "main": "babel.config.js",
   "private": true,
   "repository": {
+    "type": "git",
     "url": "git+https://github.com/Ellon-M/group-capstone.git"
   },
   "dependencies": {
@@ -682,10 +683,6 @@
     "yauzl": "^2.10.0",
     "yocto-queue": "^0.1.0",
     "zwitch": "^1.0.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ellon-M/group-capstone.git"
   },
   "keywords": [],
   "author": "",
