@@ -1,4 +1,5 @@
 import { constant } from 'lodash';
+import counter from './Modules/counter.js';
 import './style.css';
 const mealsSec = document.querySelector('.meals');
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R8PkkxCkNQPQdCTMeNzH/likes/';
@@ -28,38 +29,36 @@ const  get = async () => {
 
 get();
 
+// get the comments Id
 document.addEventListener('click', (e) => {
   if(e.target.className === 'btn-cmt'){
     const mealId = e.target.id;
   }
 })
 
-// likes
-document.addEventListener('click', async (e) => {
-  if(e.target.className === 'btn-like'){
-    // e.preventDefault();
-    const item = {
-      item_id: e.target.id,
-    };
+// Poste request likes
+const postReqLikes = async (id) => {
+  const postRequest = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({item_id: id,}),
+  };
+  await fetch(url, postRequest).then((res) => res.json());
+}
 
-    const postRequest = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(item),
-    };
-  
-    await fetch(url, postRequest).then((res) => res.json());
-    window.location.reload();
+document.addEventListener('click', async (e) => {
+  e.preventDefault()
+  if(e.target.className === 'btn-like'){
+    const id = e.target.id;
+    postReqLikes(id);
   }
-  
+  await fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
 });
 
-fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
-
+// display likes
 const displayLikes = (data) => {
-  //  data.forEach((resp) => {console.log(resp.item_id)} );
   const likeCount = document.querySelectorAll('.likes-count');
   likeCount.forEach(element => {
     data.forEach((resp) => {
@@ -69,3 +68,17 @@ const displayLikes = (data) => {
     });
   })
 }
+
+window.addEventListener('load', () => {
+  fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
+})
+
+document.addEventListener('click', (e) => {
+  fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
+});
+
+//Show the number of items in the page.
+  window.addEventListener('load', () => {
+    mealsSec.lastChild.innerHTML +=`<div>Pages 1 : ${counter()} Items.</div>`
+  })
+  
