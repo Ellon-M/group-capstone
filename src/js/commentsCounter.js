@@ -1,5 +1,3 @@
-const comments = [...document.querySelectorAll('.fetched-comment')];
-
-const commentsCounter = () => comments.length;
+const commentsCounter = (comments) => comments.length;
 
 export default commentsCounter;

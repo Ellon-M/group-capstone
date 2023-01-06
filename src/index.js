@@ -1,12 +1,13 @@
-import { constant } from 'lodash';
 import './style.css';
+import Popup from './js/popup.js';
+
 const mealsSec = document.querySelector('.meals');
 const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/R8PkkxCkNQPQdCTMeNzH/likes/';
 
 // display Meals
 const displayMeal = (data) => {
-  mealsSec.innerHTML +=
-  data.meals.map( meal =>`
+  mealsSec.innerHTML
+  += data.meals.map((meal) => `
   <div class="meal">
     <img src="${meal.strMealThumb}" alt="">
     <h2>${meal.strMeal}</h2>
@@ -16,11 +17,11 @@ const displayMeal = (data) => {
     </div>
     <button class="btn-cmt" id="${meal.idMeal}">Comments</button>
     
-  </div>`)
-}
+  </div>`);
+};
 
-// Fetch the mealdb Api 
-const  get = async () => {
+// Fetch the mealdb Api
+const get = async () => {
   const respons = await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian');
   const data = await respons.json();
   displayMeal(data);
@@ -29,14 +30,16 @@ const  get = async () => {
 get();
 
 document.addEventListener('click', (e) => {
-  if(e.target.className === 'btn-cmt'){
+  if (e.target.className === 'btn-cmt') {
     const mealId = e.target.id;
+    const popup = new Popup(mealId);
+    popup.initEvents();
   }
-})
+});
 
 // likes
 document.addEventListener('click', async (e) => {
-  if(e.target.className === 'btn-like'){
+  if (e.target.className === 'btn-like') {
     // e.preventDefault();
     const item = {
       item_id: e.target.id,
@@ -49,23 +52,23 @@ document.addEventListener('click', async (e) => {
       },
       body: JSON.stringify(item),
     };
-  
+
     await fetch(url, postRequest).then((res) => res.json());
     window.location.reload();
   }
-  
 });
-
-fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
 
 const displayLikes = (data) => {
   //  data.forEach((resp) => {console.log(resp.item_id)} );
   const likeCount = document.querySelectorAll('.likes-count');
-  likeCount.forEach(element => {
+  likeCount.forEach((element) => {
     data.forEach((resp) => {
-      if(element.id === resp.item_id  ){
-        element.textContent = resp.likes + ' likes'
+      if (element.id === resp.item_id) {
+        element.textContent = `${resp.likes} likes`;
       }
     });
-  })
-}
+  });
+};
+
+fetch(url).then((res) => res.json()).then((data) => displayLikes(data));
+

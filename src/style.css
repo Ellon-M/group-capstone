@@ -128,14 +128,40 @@ main {
 }
 
 .popup {
-  margin: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  margin-left: 2rem;
   padding: 4rem 0.5rem;
   display: flex;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #fff;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  bottom: 0;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
+
+  /* height: 100vh; */
   align-items: center;
   border-radius: 30px;
   border: 1px solid #b4b4b4;
+}
+
+.popup::-webkit-scrollbar {
+  display: none;
+}
+
+.close-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.close {
+  padding: 10px;
 }
 
 .meal-info {
@@ -148,7 +174,7 @@ main {
 
 .meal-img {
   display: flex;
-  width: 100%;
+  width: 70%;
   height: 300px;
   background-position: center;
   background-size: cover;
@@ -184,14 +210,14 @@ main {
 @media only screen and (min-width: 1024px) {
   .popup {
     margin: 4rem;
-    padding: 5rem 2rem;
+    padding: 3rem 2rem;
   }
 }
 
 @media only screen and (min-width: 1240px) {
   .popup {
     margin: 6rem;
-    padding: 6rem 4rem;
+    padding: 4rem 2rem;
   }
 
   .meal-img {
@@ -201,8 +227,9 @@ main {
 
 @media only screen and (min-width: 1440px) {
   .popup {
-    margin: 7rem;
-    padding: 7rem 5rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding: 5rem 2rem;
   }
 
   .meal-img {
@@ -284,5 +311,56 @@ textarea {
     width: 120px;
     height: 6vh;
     font-size: 18px;
+  }
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.fetched-comments-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+}
+
+.fetched-comment {
+  font-size: 16px;
+  text-align: left;
+  font-weight: 400;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 1rem;
+  justify-content: flex-start;
+}
+
+#comment-name {
+  font-weight: 600;
+}
+
+.no-comments-message {
+  font-weight: 600;
+  font-style: italic;
+  padding: 15px;
+}
+
+@media only screen and (min-width: 790px) {
+  .no-comments-message {
+    padding: 45px;
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  .no-comments-message {
+    padding: 65px;
   }
 }
