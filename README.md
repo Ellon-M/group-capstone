@@ -59,8 +59,9 @@ A web app that uses data from the [MealDB API](https://www.themealdb.com/api.php
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-<!-- - [Live Demo Link]() -->
-Coming Soon..
+- [Live Demo Link](https://ellon-m.github.io/group-capstone/dist/)
+- [Documentation video link](https://drive.google.com/file/d/1D5oF4NCQHTfnY956cFwfH_WdQVmJsThD/view?usp=sharing)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
