@@ -23,7 +23,7 @@
   - [Install](#install)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
+  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -37,6 +37,7 @@
 
 
 <!-- **This** is a simple webpage that displays scores, submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external [Leaderboard API service](https://www.notion.so/microverse/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3) -->
+A web app that uses data from the [MealDB API](https://www.themealdb.com/api.php) to display various types of meals. Users can also like and comment on specific meals of choice thanks to the [Involvement API](https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270) by Microverse.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -45,10 +46,15 @@
 - ES6 JavaScript & Webpack
 - Async JavaScript
 
+### Tech Stack <a name="tech-stack"></a>
+- HTML
+- CSS
+- Javascript(ES6)
+- Webpack 
+
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
 
 - **Webpack - as a module bundler**
 - **Async JavaScript - API Calls**
@@ -59,8 +65,9 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-<!-- - [Live Demo Link]() -->
-Coming Soon..
+- [Live Demo Link](https://ellon-m.github.io/group-capstone/dist/)
+- [Documentation video link](https://drive.google.com/file/d/1D5oF4NCQHTfnY956cFwfH_WdQVmJsThD/view?usp=sharing)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -76,9 +83,9 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-NodeJS installed.
-Git installed.
-A web browser of choice.
+-NodeJS installed.
+-Git installed.
+-A web browser of choice.
 
 ### Setup
 
@@ -87,6 +94,39 @@ Clone this repository to your desired folder:
 - Use the `git clone` command with this [link](https://github.com/Ellon-M/group-capstone.git)
 - On the terminal, inside the desired folder's directory, run `npm install` to install all the necessary depandancies.
 - run `npm start` to execute the code and serve it on the browser.
+
+### Install
+
+- Install this project with:
+
+```
+$ npm install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```
+npm run start
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```
+npm run test
+```
+
+### Deployment
+
+You can deploy this project using:
+
+
+```
+npm run deploy
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,33 +152,29 @@ Feel free to check the [issues page](../../issues/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-<!-- - [ ] **Add CSS styling**
-- [ ] **Implement a DELETE method** -->
+ - Reservation popup
+ - Send and receive data from API
 
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p>
+ <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
+## 🤝 Contributing <a name="contributing"></a>
+
+If you want to contribute to this project, create a fork and submit a pull request.
 
 ## ⭐️ Show your support <a name="support"></a>
-
 
 If you like this project please give it as star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-<!-- ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+We would like to thank Microverse for providing the necessary guidance and resources that helped in making this project successful.
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank -->
-
-<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FAQ (optional) -->
 
@@ -156,12 +192,10 @@ I would like to thank -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-<!-- LICENSE -->
+LICENSE
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-<!-- _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._ -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
