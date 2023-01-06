@@ -82,6 +82,6 @@ document.addEventListener('click', () => {
 });
 
 // Show the number of items in the page.
-  window.addEventListener('load', () => {
-    mealsSec.lastChild.innerHTML += `<div> Pages 1 : ${counter()} Items.</div>`; 
-  });
+window.addEventListener('load', () => {
+  mealsSec.lastChild.innerHTML += `<div> Pages 1 : ${counter()} Items.</div>`;
+});
